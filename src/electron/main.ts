@@ -3,5 +3,9 @@ import path from "path";
 
 app.on("ready", () => {
   const mainWindow = new BrowserWindow({});
-  mainWindow.loadFile(path.join(app.getAppPath(), "/dist-react/index.html")); // Adjust the path as needed
+  if (process.env.NODE_ENV === "development") {
+    mainWindow.loadURL("http://localhost:5123");
+  } else {
+    mainWindow.loadFile(path.join(app.getAppPath(), "/dist-react/index.html"));
+  }
 });
