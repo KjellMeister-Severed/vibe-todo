@@ -1,7 +1,7 @@
 {
   "appId": "com.kmaekelberg.vibetodo",
   "files": ["dist-electron", "dist-react"],
-  "icon": "build/icon.png",
+  "icon": "./icon.png",
   "mac": {
     "target": ["dmg"]
   },
