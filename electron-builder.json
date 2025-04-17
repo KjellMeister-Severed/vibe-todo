@@ -1,0 +1,11 @@
+{
+  "appId": "com.kmaekelberg.vibetodo",
+  "files": ["dist-electron", "dist-react"],
+  "icon": "build/icon.jpg",
+  "mac": {
+    "target": ["dmg"]
+  },
+  "win": {
+    "target": ["msi", "portable"]
+  }
+}
