@@ -1,8 +1,13 @@
 import { app, BrowserWindow } from "electron";
 import path from "path";
+import { getPreloadPath } from "./pathResolver.js";
 
 app.on("ready", () => {
-  const mainWindow = new BrowserWindow({});
+  const mainWindow = new BrowserWindow({
+    webPreferences: {
+      preload: getPreloadPath(),
+    },
+  });
   if (process.env.NODE_ENV === "development") {
     mainWindow.loadURL("http://localhost:5123");
   } else {
