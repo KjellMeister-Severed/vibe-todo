@@ -1,5 +1,6 @@
-const electron = require("electron");
-electron.contextBridge.exposeInMainWorld("electron", {
-  subscribeTodos: (callback: (todos: any) => void) => callback({}),
-  getHello: () => "Hello from Electron!",
+const { contextBridge, ipcRenderer } = require("electron");
+
+contextBridge.exposeInMainWorld("electron", {
+  close: () => ipcRenderer.send("window-close"),
+  minimize: () => ipcRenderer.send("window-minimize"),
 });
